@@ -21,7 +21,7 @@ public class TimeInfo {
     private final TimeZoneStatus timeZoneStatus;
     private final GeneralStatus generalStatus;
 
-    TimeInfo(Byte[] arr) {
+    TimeInfo(byte[] arr) {
         hours = (arr[0] - 48) * 10 + (arr[1] - 48);
         minutes = (arr[2] - 48) * 10 + (arr[3] - 48);
         seconds = ((arr[4] - 48) * 10 + (arr[5] - 48)) + 1; //Responds on the next second with previous second's time...
