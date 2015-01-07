@@ -5,6 +5,14 @@
  */
 package uk.ac.kent.shed.ac500;
 
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
+
 /**
  *
  * @author mjrb5
@@ -94,6 +102,25 @@ public class TimeInfo {
 
     public GeneralStatus getGeneralStatus() {
         return generalStatus;
+    }
+    
+    public Calendar asCalendar() {
+        Calendar ret = Calendar.getInstance(TimeZone.getTimeZone(getTimeZoneStatus().getTimeZone()));
+        ret.setLenient(false);
+        ret.set(getYear()+2000, getMonth()-1, getDayOfMonth(), getHours(), getMinutes(), getSeconds());
+        return ret;
+    }
+    
+    public Date asDate() {
+        return asCalendar().getTime();
+    }
+    
+    public LocalDateTime asLocalDateTime() {
+        return LocalDateTime.of(getYear()+2000, getMonth(), getDayOfMonth(), getHours(), getMinutes(), getSeconds());
+    }
+    
+    public ZonedDateTime asZonedDateTime() {
+        return ZonedDateTime.of(getYear()+2000, getMonth(), getDayOfMonth(), getHours(), getMinutes(), getSeconds(), 0, ZoneId.of(getTimeZoneStatus().getTimeZone()));
     }
 
     @Override
