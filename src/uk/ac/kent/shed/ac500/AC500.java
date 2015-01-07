@@ -16,7 +16,7 @@ import jssc.SerialPortException;
  */
 public class AC500 {
 
-    private String port;
+    private final String port;
 
     public AC500(String port) {
         this.port = port;
