@@ -3,7 +3,7 @@ AC500
 
 A simple Java libary for retrieving time information from the Galleon AC500 atomic clock receiver. It will generally return the correct time to the nearest second or so, but is not hugely accurate beyond this point since it does not (at present) account for the transmit time. (JSSC is required as a dependency for the serial communication.)
 
-Release zip; https://github.com/berry120/AC500/blob/master/AC500-1.0-Release.zip
+Release zip: https://github.com/berry120/AC500/blob/master/AC500-1.0-Release.zip
 
 Example usage:
 
