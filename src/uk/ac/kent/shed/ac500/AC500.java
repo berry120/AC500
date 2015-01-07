@@ -21,10 +21,15 @@ public class AC500 {
     public AC500(String port) {
         this.port = port;
     }
-
+    
     public TimeInfo getTime() {
         byte[] arr = getBytes("o", 16);
         return new TimeInfo(arr);
+    }
+    
+    public ReceptionStatus getReceptionStatus() {
+        byte[] arr = getBytes("g", 2);
+        return new ReceptionStatus(arr);
     }
     
     public void startReceptionAttempt() {
@@ -71,9 +76,8 @@ public class AC500 {
      */
     public static void main(String[] args) {
         AC500 ac500 = new AC500("COM2");
-        System.out.println(ac500.getTime());
         ac500.startReceptionAttempt();
-        System.out.println(ac500.getTime());
+        System.out.println(ac500.getReceptionStatus());
     }
 
 }
