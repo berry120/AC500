@@ -11,10 +11,24 @@ package uk.ac.kent.shed.ac500;
  */
 public class TimeZoneStatus {
 
-    private byte timeZoneByte;
+    private final byte timeZoneByte;
 
     TimeZoneStatus(byte timeZoneByte) {
         this.timeZoneByte = timeZoneByte;
+    }
+    
+    public String getTimeZone() {
+        String timeZone;
+        if(isBST()) {
+            timeZone = "BST";
+        }
+        else if(isUTC()) {
+            timeZone = "UTC";
+        }
+        else {
+            timeZone = "Unknown";
+        }
+        return timeZone;
     }
 
     public boolean isUTC() {
@@ -31,17 +45,7 @@ public class TimeZoneStatus {
 
     @Override
     public String toString() {
-        String timeZone;
-        if(isBST()) {
-            timeZone = "BST";
-        }
-        else if(isUTC()) {
-            timeZone = "UTC";
-        }
-        else {
-            timeZone = "Error";
-        }
-        return "Time zone: " + timeZone + "\n"
+        return "Time zone: " + getTimeZone() + "\n"
                 + "Change impending: " + isChangeImpending();
     }
 

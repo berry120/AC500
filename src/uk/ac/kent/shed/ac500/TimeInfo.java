@@ -18,6 +18,8 @@ public class TimeInfo {
     private final int dayOfMonth;
     private final int month;
     private final int year;
+    private final TimeZoneStatus timeZoneStatus;
+    private final GeneralStatus generalStatus;
 
     TimeInfo(Byte[] arr) {
         hours = (arr[0] - 48) * 10 + (arr[1] - 48);
@@ -27,6 +29,8 @@ public class TimeInfo {
         dayOfMonth = (arr[7] - 48) * 10 + (arr[8] - 48);
         month = (arr[9] - 48) * 10 + (arr[10] - 48);
         year = (arr[11] - 48) * 10 + (arr[12] - 48);
+        timeZoneStatus = new TimeZoneStatus(arr[13]);
+        generalStatus = new GeneralStatus(arr[14]);
     }
 
     public int getHours() {
@@ -78,6 +82,14 @@ public class TimeInfo {
         return year;
     }
 
+    public TimeZoneStatus getTimeZoneStatus() {
+        return timeZoneStatus;
+    }
+
+    public GeneralStatus getGeneralStatus() {
+        return generalStatus;
+    }
+    
     @Override
     public String toString() {
         StringBuilder ret = new StringBuilder();
@@ -94,6 +106,8 @@ public class TimeInfo {
         ret.append(pad(minutes));
         ret.append(":");
         ret.append(pad(seconds));
+        ret.append(" ");
+        ret.append(getTimeZoneStatus().getTimeZone());
         return ret.toString();
     }
 
