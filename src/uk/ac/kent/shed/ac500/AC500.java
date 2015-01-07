@@ -24,7 +24,8 @@ import jssc.SerialPortException;
 
 /**
  * Create an instance of this class to communicate with the AC500 and return
- * results.
+ * results. This library has been implemented from the protocol as described at
+ * http://www.galsys.co.uk/galtech2.html.
  *
  * @author Michael Berry
  */
