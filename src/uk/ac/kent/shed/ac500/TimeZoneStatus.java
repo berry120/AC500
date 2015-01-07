@@ -13,7 +13,7 @@ public class TimeZoneStatus {
 
     private byte timeZoneByte;
 
-    public TimeZoneStatus(byte timeZoneByte) {
+    TimeZoneStatus(byte timeZoneByte) {
         this.timeZoneByte = timeZoneByte;
     }
 

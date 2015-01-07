@@ -13,7 +13,7 @@ public class GeneralStatus {
     
     private byte statusByte;
     
-    public GeneralStatus(byte statusByte) {
+    GeneralStatus(byte statusByte) {
         this.statusByte = statusByte;
     }
     
