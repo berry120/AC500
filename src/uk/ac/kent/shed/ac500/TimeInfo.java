@@ -23,8 +23,14 @@ public class TimeInfo {
 
     TimeInfo(byte[] arr) {
         hours = (arr[0] - 48) * 10 + (arr[1] - 48);
-        minutes = (arr[2] - 48) * 10 + (arr[3] - 48);
-        seconds = ((arr[4] - 48) * 10 + (arr[5] - 48)) + 1; //Responds on the next second with previous second's time...
+        int tempMinutes = (arr[2] - 48) * 10 + (arr[3] - 48);
+        int tempSeconds = ((arr[4] - 48) * 10 + (arr[5] - 48)) + 1; //Responds on the next second with previous second's time...
+        if (tempSeconds >= 60) {
+            tempMinutes += tempSeconds/60;
+            tempSeconds %= 60;
+        }
+        seconds = tempSeconds;
+        minutes = tempMinutes;
         dayOfWeek = arr[6] - 48;
         dayOfMonth = (arr[7] - 48) * 10 + (arr[8] - 48);
         month = (arr[9] - 48) * 10 + (arr[10] - 48);
@@ -89,7 +95,7 @@ public class TimeInfo {
     public GeneralStatus getGeneralStatus() {
         return generalStatus;
     }
-    
+
     @Override
     public String toString() {
         StringBuilder ret = new StringBuilder();
