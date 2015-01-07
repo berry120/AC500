@@ -70,14 +70,4 @@ public class AC500 {
         }
     }
 
-    /**
-     * Just testing
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        AC500 ac500 = new AC500("COM2");
-        ac500.startReceptionAttempt();
-        System.out.println(ac500.getReceptionStatus());
-    }
-
 }
