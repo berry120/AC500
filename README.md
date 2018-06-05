@@ -1,7 +1,11 @@
-AC500
-=======
+[![Build Status](https://travis-ci.org/berry120/AC500.svg?branch=master)](https://travis-ci.org/berry120/AC500)
 
-A simple Java libary for retrieving time information from the Galleon AC500 atomic clock receiver. It will generally return the correct time to the nearest second or so, but is not hugely accurate beyond this point since it does not (at present) account for the transmit time. (JSSC is required as a dependency for the serial communication.)
+AC500
+======
+
+A simple Java libary for retrieving time information from the Galleon AC500 atomic clock receiver. It will generally return the correct time to the nearest second or so, but is not hugely accurate beyond this point since it does not (at present) account for the transmit time.
+
+JSSC is required as a dependency for the serial communication.
 
 Example usage:
 
