@@ -3,6 +3,8 @@
 AC500
 ======
 
+<img src="https://www.galsys.co.uk/images/time-receivers/ac-500-msf/msf-time-receiver-left-940x580.jpg" alt="AC500" width="400"/>
+
 A simple Java libary for retrieving time information from the Galleon AC500 atomic clock receiver. It will generally return the correct time to the nearest second or so, but is not hugely accurate beyond this point since it does not (at present) account for the transmit time.
 
 JSSC is required as a dependency for the serial communication.
