@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/660e1592724c4fd79ce3bf0c463918d4)](https://app.codacy.com/app/berry120/AC500?utm_source=github.com&utm_medium=referral&utm_content=berry120/AC500&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/berry120/AC500.svg?branch=master)](https://travis-ci.org/berry120/AC500)
 
 AC500
