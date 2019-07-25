@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.berry120.ac500;
+package com.github.berry120.ac500;
 
 /**
  * Encapsulates information regarding the reception status of the AC500.
