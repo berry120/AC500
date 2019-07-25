@@ -14,6 +14,18 @@ Use at your peril - this is nothing more than a thrown together proof of concept
 
 JSSC is required as a dependency for the serial communication.
 
+## Setup
+
+### Maven
+    <dependency>
+      <groupId>com.github.berry120.ac500</groupId>
+      <artifactId>ac500</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+### Gradle
+    compile 'com.github.berry120.ac500:ac500:1.0'
+
 Example usage:
 
     AC500 ac500 = new AC500("COM2");                              //Change to whatever port the AC500 is attached to.
